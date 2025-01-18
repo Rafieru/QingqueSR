@@ -5,8 +5,8 @@ pub async fn handle(req: &[u8]) -> Vec<u8> {
     let req = dec!(GetSceneMapInfoCsReq, req);
 
     GetSceneMapInfoScRsp {
-        map_info_list: req
-            .entry_id
+        scene_map_info: req
+            .entry_id_list
             .iter()
             .map(|i| SceneMapInfo {
                 entry_id: *i,

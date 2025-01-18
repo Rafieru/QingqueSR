@@ -1,6 +1,6 @@
 use serde::Deserialize;
 use sr_proto::pb::{
-    AmountInfo, Avatar, AvatarType, Gender, LineupAvatar, LineupInfo, MultiPathAvatarType,
+    SpBarInfo, Avatar, AvatarType, Gender, LineupAvatar, LineupInfo, MultiPathAvatarType,
 };
 use std::fs;
 
@@ -53,11 +53,11 @@ impl AvatarConfig {
             .map(|(i, id)| LineupAvatar {
                 id: *id,
                 hp: 10000,
-                slot_type: i as u32,
+                slot: i as u32,
                 satiety: 0,
-                sp: Some(AmountInfo {
-                    cur_amount: 0,
-                    max_amount: 10000,
+                sp_bar: Some(SpBarInfo {
+                    cur_sp: 0,
+                    max_sp: 10000,
                 }),
                 avatar_type: AvatarType::AvatarFormalType.into(),
             })

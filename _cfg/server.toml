@@ -7,7 +7,7 @@ game_server_port = 23301
 dispatch_url = "http://127.0.0.1:21000/query_gateway"
 
 # try changing to "9" or "21" if you get login issues
-env_type = "2"
+env_type = "21"
 
 # public enum EnvType : Enum, IComparable, IConvertible, IFormattable
 # {

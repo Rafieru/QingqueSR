@@ -11,7 +11,7 @@ pub async fn handle(req: &[u8]) -> Vec<u8> {
         buff_list: cfg.get_battle_buffs(),
         battle_id: cfg.get_battle_id(),
         stage_id: cfg.get_stage_id(),
-        cycle_count: cfg.get_cycle_count(),
+        rounds_limit: cfg.get_cycle_count(),
         monster_wave_list: cfg.get_battle_waves(),
         battle_avatar_list: cfg.get_battle_avatars(),
         logic_random_seed: time::cur_timestamp_for_seed(),

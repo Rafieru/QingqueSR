@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use sr_proto::pb::{
-    AmountInfo, AvatarSkillTree, AvatarType, BattleAvatar, BattleBuff, BattleEquipment,
-    BattleRelic, RelicAffix, SceneMonsterData, SceneMonsterWave, SceneMonsterWaveParam,
+    SpBarInfo, AvatarSkillTree, AvatarType, BattleAvatar, BattleBuff, BattleEquipment,
+    BattleRelic, RelicAffix, SceneMonster, SceneMonsterWave, SceneMonsterWaveParam,
 };
 use std::collections::HashMap;
 use std::fs;
@@ -87,12 +87,12 @@ impl SrToolsConfig {
             .map(|monster_ids| SceneMonsterWave {
                 monster_list: monster_ids
                     .iter()
-                    .map(|&monster_id| SceneMonsterData {
+                    .map(|&monster_id| SceneMonster {
                         monster_id,
                         ..Default::default()
                     })
                     .collect(),
-                wave_param: Some(SceneMonsterWaveParam {
+                monster_param: Some(SceneMonsterWaveParam {
                     level: self.battle_config.monster_level,
                     ..Default::default()
                 }),
@@ -286,10 +286,10 @@ impl SrToolsConfig {
                 .collect()
         }
 
-        fn create_energy(sp: u32) -> AmountInfo {
-            AmountInfo {
-                cur_amount: sp * 100,
-                max_amount: 10000,
+        fn create_energy(sp: u32) -> SpBarInfo {
+            SpBarInfo {
+                cur_sp: sp * 100,
+                max_sp: 10000,
             }
         }
 
@@ -310,7 +310,7 @@ impl SrToolsConfig {
                     av.lightcone.promotion,
                 ),
                 hp: av.hp * 100,
-                sp: Some(create_energy(av.sp)),
+                sp_bar: Some(create_energy(av.sp)),
                 promotion: av.promotion,
                 // Clone to avoid borrowing issues
                 relic_list: create_relics(av.relics.clone()),
