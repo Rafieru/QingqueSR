@@ -36,7 +36,7 @@ This server will fallback to default config when a file in `_cfg` is invalid or 
 4. Run the following executables:
    - `game-server.exe`
    - `sdk-server.exe`
-   - Launch the Game from Cultivation
+   - `Launch the Game from Cultivation`
 
 5. Make sure game traffic is being redirected and have fun.
 
