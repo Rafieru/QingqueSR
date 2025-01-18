@@ -1,4 +1,4 @@
-# QingqueSR - 3.0.0
+# QingqueSR - 3.0.5
 
 Ever wanted a private server that is quick to update when the game updates, but doesn't sacrifice too much features?
 
@@ -13,7 +13,9 @@ This tutorial assumes you have basic knowledge of terminal usage and traffic red
 ### Prerequisites
 
 #### Proxy Setup (For Windows)
-- Download the proxy tool from [here](https://git.xeondev.com/YYHEggEgg/FireflySR.Tool.Proxy/releases/download/v2.0.0/FireflySR.Tool.Proxy_win-x64.zip).
+- Download cultivation from [here](https://github.com/NotThorny/Cultivation/releases/download/1.5.4/Cultivation.zip).
+- Set Server Address to 127.0.0.1 and port to 21000
+- Open setting set game install path to StarRail.exe
 
 - If you experience internet connectivity issues after playing, manually disable the proxy in your Windows settings.
 
@@ -34,6 +36,7 @@ This server will fallback to default config when a file in `_cfg` is invalid or 
 4. Run the following executables:
    - `game-server.exe`
    - `sdk-server.exe`
+   - Launch the Game from Cultivation
 
 5. Make sure game traffic is being redirected and have fun.
 
